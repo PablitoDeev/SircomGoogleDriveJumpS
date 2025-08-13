@@ -12,19 +12,9 @@ services:
     container_name: sircomform
     restart: unless-stopped
     environment:
-      - FLASK_ENV=production
+      FLASK_ENV: "production"
     networks:
       - caddy_net
-<<<<<<< HEAD
-    # Monta credenciales desde el host (ver paso 3)
     volumes:
       - /opt/sircom/drive-creds/credentials.json:/app/credentials.json:ro
       - /opt/sircom/drive-creds/token.json:/app/token.json
-    # Si quieres probar directo sin Caddy, expón temporalmente:
-    # ports:
-    #   - "5000:5000"
-=======
-    volumes:
-      - /opt/sircom/drive-creds/credentials.json:/app/credentials.json:ro
-      - /opt/sircom/drive-creds/token.json:/app/token.json
->>>>>>> 9c0a6b7 (deploy: primera versión lista para Portainer + Caddy)
