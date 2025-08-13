@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.log
+venv/
+<<<<<<< HEAD
+=======
+env/
+>>>>>>> 9c0a6b7 (deploy: primera versión lista para Portainer + Caddy)
+.env
+credentials.json
+token.json
