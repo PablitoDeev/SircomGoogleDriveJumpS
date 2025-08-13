@@ -11,8 +11,12 @@ services:
       dockerfile: Dockerfile
     container_name: sircomform
     restart: unless-stopped
+    user: "0:0"     # <--- AGREGA ESTO (corre como root)
     environment:
-      FLASK_ENV: "production"
+      - FLASK_ENV=production
+      # (opcional) rutas explícitas si quieres:
+      # - GOOGLE_CREDENTIALS_FILE=/app/credentials.json
+      # - GOOGLE_TOKEN_FILE=/app/token.json
     networks:
       - caddy_net
     volumes:
